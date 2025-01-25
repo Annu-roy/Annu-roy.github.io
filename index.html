@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ANNU ROY | Portfolio</title>
+
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- (Optional) Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" 
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome FREE CDN (icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-2H3gE7qZKZr/X81bSdYJZd9bRZX51Awex0A8g9mU4o6C7Oir4kPpXU4pPDul5n8ZoNQXcl5FkpT2eG8SpSc9QQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+
+  <!-- ========== NAVBAR (4 links only) ========== -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+    </ul>
+  </nav>
+
+  <!-- ================ HOME SECTION ================ -->
+  <section class="home-section" id="home">
+    <div class="home-left">
+      <!-- Speech Bubble -->
+      <div class="speech-bubble">Hello I’m</div>
+
+      <!-- Big Name -->
+      <h1 class="my-name">ANNU ROY</h1>
+
+      <!-- Dynamic Text (letter-by-letter, no cursor) -->
+      <div class="dynamic-text">
+        <!-- Will be populated by script.js -->
+        <span id="electronic-text"></span>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <p><i class="fa-solid fa-envelope"></i> annu.roy@gmail.com</p>
+        <p><i class="fa-solid fa-location-dot"></i> My City, My Country</p>
+      </div>
+
+      <!-- Social Links (LinkedIn, GitHub, Medium) -->
+      <div class="social-links">
+        <a 
+          href="https://www.linkedin.com/in/annu-roy"
+          target="_blank" 
+          class="social-icon"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a 
+          href="https://github.com/annu-roy"
+          target="_blank" 
+          class="social-icon"
+        >
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a 
+          href="https://medium.com/@annu-roy"
+          target="_blank" 
+          class="social-icon"
+        >
+          <i class="fa-brands fa-medium"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Profile Photo on the Right -->
+    <div class="home-right">
+      <div class="profile-pic">
+        <img src="images/myPhoto.jpeg" alt="My Photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ ABOUT SECTION ================ -->
+  <section class="about-section" id="about">
+    <!-- Left column -->
+    <div class="about-left">
+      <h3 class="light-turquoise">Data-Driven and Dedicated</h3>
+      <h2 class="light-turquoise">Aspiring Data Analyst Ready to Make an Impact</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+      </p>
+      <!-- Edit #2: Download CV Button -->
+      <div class="download-cv-btn">
+        <a href="cv.pdf" download>
+          <i class="fa-solid fa-download"></i>
+          Download CV
+        </a>
+      </div>
+    </div>
+
+    <!-- Right column: Skills -->
+    <div class="about-right">
+      <h3 class="light-turquoise">My Skills & Competencies</h3>
+
+      <div class="skill">
+        <span>Power BI</span>
+        <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+        <span class="skill-value">90%</span>
+      </div>
+      <div class="skill">
+        <span>Tableau</span>
+        <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+        <span class="skill-value">90%</span>
+      </div>
+      <div class="skill">
+        <span>Python</span>
+        <div class="skill-bar"><div class="skill-fill" style="width: 70%;"></div></div>
+        <span class="skill-value">70%</span>
+      </div>
+      <div class="skill">
+        <span>SQL</span>
+        <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+        <span class="skill-value">95%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ PORTFOLIO SECTION ================ -->
+  <section class="portfolio-section" id="portfolio">
+    <!-- Left-aligned heading (closer spacing) -->
+    <div class="portfolio-title">
+      <h3 class="light-turquoise">Data Analysis and Visualization</h3>
+      <h1 class="light-turquoise">Portfolio</h1>
+    </div>
+
+    <!-- Minimal margin to bring it closer to tabs -->
+    <div class="portfolio-subtitle" style="margin-bottom: 1rem;">
+      <p>Check out some of the case studies I made as a Data Analyst.</p>
+    </div>
+
+    <!-- Center-aligned tabs -->
+    <div class="tabs-container">
+      <button class="tab-button active" data-tab="tab-powerbi">Power BI</button>
+      <button class="tab-button" data-tab="tab-tableau">Tableau</button>
+      <button class="tab-button" data-tab="tab-python">Python</button>
+    </div>
+
+    <!-- Projects Container (vertical) -->
+    <div class="projects-container">
+      <!-- ==== POWER BI TAB (4 projects) ==== -->
+      <div class="tab-content active" id="tab-powerbi">
+        <div class="project-card">
+          <a href="https://www.novypro.com/project/1" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/powerbi1.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Power BI Project 1</h2>
+              <p>Description about this Power BI dashboard.</p>
+            </div>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="https://www.novypro.com/project/2" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/powerbi2.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Power BI Project 2</h2>
+              <p>Another interesting case study in Power BI.</p>
+            </div>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="https://www.novypro.com/project/3" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/powerbi3.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Power BI Project 3</h2>
+              <p>Details about third project in Power BI.</p>
+            </div>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="https://www.novypro.com/project/4" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/powerbi4.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Power BI Project 4</h2>
+              <p>Fourth example of Power BI dashboard.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ==== TABLEAU TAB (4 projects) ==== -->
+      <div class="tab-content" id="tab-tableau">
+        <div class="project-card">
+          <a href="https://public.tableau.com/views/tableau1" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/tableau1.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Tableau Project 1</h2>
+              <p>Short description about your Tableau project.</p>
+            </div>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="https://public.tableau.com/views/tableau2" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/tableau2.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Tableau Project 2</h2>
+              <p>Second project in Tableau.</p>
+            </div>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="https://public.tableau.com/views/tableau3" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/tableau3.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Tableau Project 3</h2>
+              <p>Another interesting case study in Tableau.</p>
+            </div>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="https://public.tableau.com/views/tableau4" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/tableau4.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Tableau Project 4</h2>
+              <p>Fourth project in Tableau Public.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ==== PYTHON TAB (4 projects) ==== -->
+      <div class="tab-content" id="tab-python">
+        <div class="project-card">
+          <a href="https://github.com/annu-roy/PythonProject1" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/python1.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Python Project 1</h2>
+              <p>A Python data analysis case study with code on GitHub.</p>
+            </div>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="https://github.com/annu-roy/PythonProject2" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/python2.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Python Project 2</h2>
+              <p>Another interesting project in Python.</p>
+            </div>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="https://github.com/annu-roy/PythonProject3" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/python3.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Python Project 3</h2>
+              <p>Third case study with Python scripts on GitHub.</p>
+            </div>
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="https://github.com/annu-roy/PythonProject4" target="_blank">
+            <div 
+              class="project-background" 
+              style="background-image: url('images/python4.jpg');"
+            ></div>
+            <div class="project-overlay">
+              <h2>Python Project 4</h2>
+              <p>Fourth example of Python data analysis.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ OUTPUT / PLATFORMS SECTION ================ -->
+  <section class="output-section" id="output">
+    <div class="output-title">
+      <h3 class="light-turquoise">output</h3>
+      <h1 class="light-turquoise">platforms</h1>
+    </div>
+
+    <!-- Right side paragraph (not below heading) -->
+    <div class="output-description">
+      <p>
+        These are the websites where you may view all of my work. I use Github to host all of my repositories. 
+        Medium is where I document and share the process of my projects. Last, novyPro is where I publish my Power BI dashboards.
+      </p>
+    </div>
+
+    <!-- Horizontal Scroll/Carousel with left/right arrows and 4 boxes -->
+    <div class="output-carousel">
+      <button class="carousel-btn" id="carousel-left"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="carousel-track-container">
+        <div class="carousel-track">
+          <!-- BOX 1: GitHub -->
+          <div class="platform-box" data-link="https://github.com/annu-roy">
+            <img src="images/github-logo.png" alt="GitHub Logo" />
+            <h2>GitHub</h2>
+            <p>All my project source files available.</p>
+          </div>
+
+          <!-- BOX 2: novyPro -->
+          <div class="platform-box" data-link="https://www.novypro.com">
+            <img src="images/novypro-logo.png" alt="novyPro Logo" />
+            <h2>novyPro</h2>
+            <p>All my Power BI dashboards are available here.</p>
+          </div>
+
+          <!-- BOX 3: Tableau -->
+          <div class="platform-box" data-link="https://public.tableau.com/">
+            <img src="images/tableau-logo.png" alt="Tableau Logo" />
+            <h2>Tableau</h2>
+            <p>All my Tableau dashboards are available here.</p>
+          </div>
+
+          <!-- BOX 4: Medium -->
+          <div class="platform-box" data-link="https://medium.com/@annu-roy">
+            <img src="images/medium-logo.png" alt="Medium Logo" />
+            <h2>Medium</h2>
+            <p>All my project descriptions are available here.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn" id="carousel-right"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- ================ ACHIEVEMENTS SECTION ================ -->
+  <!-- Left-aligned heading -->
+  <section id="achievements" class="achievements-section" style="text-align: left;">
+    <h1 class="light-turquoise">Achievements</h1>
+    <!-- 3 certificate images horizontally per row, 3 rows that have links, 
+         then 3 more rows with images only (no link) -->
+    <div class="achievements-grid">
+      <!-- Row 1 (with links) -->
+      <a href="https://www.credly.com/badges/cert1" target="_blank">
+        <img src="images/cert1.jpg" alt="Certificate 1" />
+      </a>
+      <a href="https://www.credly.com/badges/cert2" target="_blank">
+        <img src="images/cert2.jpg" alt="Certificate 2" />
+      </a>
+      <a href="https://www.credly.com/badges/cert3" target="_blank">
+        <img src="images/cert3.jpg" alt="Certificate 3" />
+      </a>
+
+      <!-- Row 2 (with links) -->
+      <a href="https://www.credly.com/badges/cert4" target="_blank">
+        <img src="images/cert4.jpg" alt="Certificate 4" />
+      </a>
+      <a href="https://www.credly.com/badges/cert5" target="_blank">
+        <img src="images/cert5.jpg" alt="Certificate 5" />
+      </a>
+      <a href="https://www.credly.com/badges/cert6" target="_blank">
+        <img src="images/cert6.jpg" alt="Certificate 6" />
+      </a>
+
+      <!-- Row 3 (with links) -->
+      <a href="https://www.credly.com/badges/cert7" target="_blank">
+        <img src="images/cert7.jpg" alt="Certificate 7" />
+      </a>
+      <a href="https://www.credly.com/badges/cert8" target="_blank">
+        <img src="images/cert8.jpg" alt="Certificate 8" />
+      </a>
+      <a href="https://www.credly.com/badges/cert9" target="_blank">
+        <img src="images/cert9.jpg" alt="Certificate 9" />
+      </a>
+
+      <!-- Next 3 rows, no link, just images (placeholder) -->
+      <img src="images/cert10.jpg" alt="Placeholder Cert 10" />
+      <img src="images/cert11.jpg" alt="Placeholder Cert 11" />
+      <img src="images/cert12.jpg" alt="Placeholder Cert 12" />
+
+      <img src="images/cert13.jpg" alt="Placeholder Cert 13" />
+      <img src="images/cert14.jpg" alt="Placeholder Cert 14" />
+      <img src="images/cert15.jpg" alt="Placeholder Cert 15" />
+
+      <img src="images/cert16.jpg" alt="Placeholder Cert 16" />
+      <img src="images/cert17.jpg" alt="Placeholder Cert 17" />
+      <img src="images/cert18.jpg" alt="Placeholder Cert 18" />
+    </div>
+  </section>
+
+  <!-- Link to Script -->
+  <script src="script.js"></script>
+</body>
+</html>

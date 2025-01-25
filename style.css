@@ -1,0 +1,541 @@
+/* ========== Global Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== Body & Basic Styles ========== */
+body {
+  background: #000; /* black background */
+  color: #fff;      /* white text */
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Light turquoise class for headings */
+.light-turquoise {
+  color: #AFEEEE;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.navbar a:hover {
+  color: lightgray;
+}
+
+/* ========== HOME SECTION ========== */
+.home-section {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding: 6rem 4rem 2rem 4rem; /* extra horizontal padding */
+  justify-content: space-between;
+  align-items: center;
+  scroll-margin-top: 80px; /* offset for navbar */
+}
+
+/* Left Container */
+.home-left {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Speech Bubble (Light Turquoise) */
+.speech-bubble {
+  position: relative;
+  background-color: #AFEEEE;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  width: fit-content;
+}
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 20%;
+  transform: translateX(-20%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #AFEEEE;
+}
+
+/* Big Name */
+.my-name {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+/* Dynamic Text Container (no blinking cursor) */
+.dynamic-text {
+  font-size: 1.3rem;
+  min-height: 1.5em; 
+  line-height: 1.4;
+}
+
+/* Contact & Socials */
+.contact-info p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+.contact-info i {
+  margin-right: 0.5rem;
+}
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+.social-icon {
+  color: #fff;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+.social-icon:hover {
+  color: #AFEEEE;
+}
+
+/* Right Container: Profile Pic w/ Animated Border */
+.home-right {
+  flex: 1 1 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.profile-pic {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+.profile-pic::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(#AFEEEE, #fff, #AFEEEE);
+  z-index: 0;
+  animation: rotateBorder 4s linear infinite;
+}
+@keyframes rotateBorder {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+/* ========== ABOUT SECTION ========== */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 6rem 4rem;
+  scroll-margin-top: 80px;
+}
+
+/* Left About */
+.about-left {
+  flex: 1 1 50%;
+  max-width: 600px;
+}
+.about-left p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Download CV Button (rounded box) */
+.download-cv-btn {
+  margin-top: 1.5rem;
+}
+.download-cv-btn a {
+  background-color: #333;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.download-cv-btn a:hover {
+  background-color: #555;
+}
+
+/* Right About (Skills) */
+.about-right {
+  flex: 1 1 40%;
+}
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+.skill-bar {
+  background-color: #333;
+  height: 10px;
+  flex: 1;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.skill-fill {
+  background-color: #AFEEEE;
+  height: 100%;
+  width: 0;
+  transition: width 0.5s;
+}
+.skill-value {
+  font-size: 0.9rem;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* ========== PORTFOLIO SECTION ========== */
+.portfolio-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  scroll-margin-top: 80px;
+}
+
+/* Titles (light turquoise used) */
+.portfolio-title h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+.portfolio-title h1 {
+  font-family: 'Poppins', Arial, sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem; /* closer spacing */
+}
+
+/* Minimal margin for subtitle */
+.portfolio-subtitle {
+  text-align: right;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Tabs (centered) */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.tab-button:hover {
+  background: #444;
+}
+.tab-button.active {
+  background: #ccc;
+  color: #000;
+}
+
+/* Projects Container - vertical, center-aligned */
+.projects-container {
+  display: block;
+  text-align: center;
+}
+
+/* Each tab's content is hidden by default */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* Project Card - vertical layout */
+.project-card {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 2rem auto; /* center each card, spacing below */
+  border-radius: 8px;
+  overflow: hidden;
+  background: #222;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+/* Entire card clickable */
+.project-card a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+}
+
+/* Background image container */
+.project-background {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s;
+}
+
+/* Overlay with project info (hidden initially) */
+.project-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.project-overlay h2 {
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+}
+.project-overlay p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* Hover effect: background slides back, overlay slides forward */
+.project-card:hover .project-background {
+  transform: scale(1.05);
+}
+.project-card:hover .project-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* fadeIn keyframes */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* ========== OUTPUT / PLATFORMS SECTION ========== */
+.output-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  scroll-margin-top: 80px;
+  text-align: left;
+}
+
+.output-title h3 {
+  font-size: 1rem;
+  color: #AFEEEE;
+  margin-bottom: 0.2rem;
+}
+.output-title h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  color: #AFEEEE;
+  margin-bottom: 2rem;
+}
+
+/* Right-aligned description */
+.output-description {
+  text-align: right;
+  margin-bottom: 2rem;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* Carousel Container */
+.output-carousel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Arrows (left/right) */
+.carousel-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.carousel-btn:hover {
+  color: #AFEEEE;
+}
+
+/* The visible "window" */
+.carousel-track-container {
+  overflow: hidden;
+  width: 80%; 
+  position: relative;
+}
+
+/* The track that slides left/right */
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.4s;
+}
+
+/* Each platform box */
+.platform-box {
+  flex: 0 0 calc(33% - 1rem);
+  width: 300px;
+  min-width: 250px;
+  background: #fff;
+  color: #000;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* Box hover effect */
+.platform-box:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Box Content */
+.platform-box img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.platform-box h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+.platform-box p {
+  font-size: 0.9rem;
+}
+
+/* ========== ACHIEVEMENTS SECTION ========== */
+.achievements-section {
+  padding: 6rem 2rem;
+  scroll-margin-top: 80px;
+}
+.achievements-section h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #AFEEEE;
+}
+.achievements-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: start; /* left align images */
+}
+.achievements-grid img {
+  width: 250px;
+  height: auto;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.achievements-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
+@media (max-width: 768px) {
+  .navbar ul {
+    gap: 1rem;
+  }
+
+  .home-section {
+    flex-direction: column;
+    padding: 6rem 2rem 2rem 2rem;
+    text-align: center;
+  }
+  .speech-bubble::after {
+    display: none; /* hide arrow if centered */
+  }
+  .my-name {
+    font-size: 2.2rem;
+  }
+  .profile-pic {
+    width: 240px;
+    height: 240px;
+  }
+
+  .portfolio-section,
+  .output-section,
+  .achievements-section {
+    padding: 6rem 1rem;
+  }
+  .portfolio-title,
+  .portfolio-subtitle,
+  .output-title,
+  .output-description {
+    text-align: center;
+  }
+  .carousel-track-container {
+    width: 100%;
+  }
+  .platform-box {
+    flex: 0 0 80%;
+    width: auto;
+  }
+
+  .achievements-grid {
+    justify-content: center;
+  }
+}
