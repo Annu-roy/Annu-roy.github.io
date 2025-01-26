@@ -108,18 +108,24 @@ body {
 }
 .contact-info i {
   margin-right: 0.5rem;
+  font-size: 1.2rem; /* Ensure proper icon size */
+  vertical-align: middle; /* Align icons with text */
 }
 .social-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
+
 .social-icon {
   color: #fff;
-  font-size: 1.3rem;
-  transition: color 0.3s;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
+
 .social-icon:hover {
-  color: #AFEEEE;
+  color: #AFEEEE; /* Light turquoise color */
+  transform: scale(1.2); /* Slight zoom effect */
 }
 
 /* Right Container: Profile Pic w/ Animated Border */
@@ -194,8 +200,10 @@ body {
   gap: 0.5rem;
 }
 .download-cv-btn a:hover {
-  background-color: #555;
+  background-color: #AFEEEE; /* Light turquoise color */
+  color: black; /* Text becomes visible on turquoise background */
 }
+
 
 /* Right About (Skills) */
 .about-right {
