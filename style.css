@@ -9,7 +9,7 @@
 body {
   background: #000; /* black background */
   color: #fff;      /* white text */
-  font-family: Arial, sans-serif;
+  font-family: Playfair Display, serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -33,18 +33,22 @@ body {
 .navbar ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 5rem;
 }
 
 .navbar a {
+  font-size: 1.2rem;
   text-decoration: none;
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
   transition: color 0.3s;
 }
 .navbar a:hover {
-  color: lightgray;
+  color: #AFEEEE; /* Light turquoise color */
+  text-decoration: none; /* Optional: Remove underline */
+  transition: color 0.3s ease; /* Smooth transition effect */
 }
+
 
 /* ========== HOME SECTION ========== */
 .home-section {
@@ -72,7 +76,7 @@ body {
   padding: 0.75rem 1rem;
   border-radius: 10px;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 2rem;
   width: fit-content;
 }
 .speech-bubble::after {
@@ -88,15 +92,15 @@ body {
 
 /* Big Name */
 .my-name {
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 5rem;
   letter-spacing: 2px;
 }
 
 /* Dynamic Text Container (no blinking cursor) */
 .dynamic-text {
-  font-size: 1.3rem;
+  font-size: 2rem;
   min-height: 1.5em; 
   line-height: 1.4;
 }
@@ -127,6 +131,29 @@ body {
   color: #AFEEEE; /* Light turquoise color */
   transform: scale(1.2); /* Slight zoom effect */
 }
+/* Container for the link */
+.social-icon {
+  display: inline-block;
+  transition: transform 0.2s ease; /* Smooth scaling effect */
+}
+
+/* Styling for the image */
+.social-icon img {
+  width: 40px; /* Set the width of the image */
+  height: 40px; /* Set the height of the image */
+  transition: filter 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect: Change to light turquoise */
+.social-icon:hover img {
+  filter: brightness(0) saturate(100%) invert(82%) sepia(12%) saturate(224%) hue-rotate(118deg) brightness(96%) contrast(90%);
+}
+
+/* Optional: Add a slight scaling effect */
+.social-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
 
 /* Right Container: Profile Pic w/ Animated Border */
 .home-right {
@@ -138,13 +165,13 @@ body {
 }
 .profile-pic {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 .profile-pic img {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 70%;
   object-fit: cover;
   position: relative;
   z-index: 1;
@@ -165,24 +192,46 @@ body {
 }
 
 /* ========== ABOUT SECTION ========== */
-.about-section {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 6rem 4rem;
-  scroll-margin-top: 80px;
+/* About Section Container */
+/* Container for About and Skills */
+.about-container {
+  display: flex; /* Flexbox for side-by-side layout */
+  justify-content: space-between; /* Space between columns */
+  align-items: flex-start; /* Align content at the top */
+  gap: 2rem; /* Space between columns */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  padding: 4rem 2rem; /* Add spacing around the section */
+  background-color: #111; /* Optional: Background color */
 }
 
-/* Left About */
+/* Left Section: About Me */
 .about-left {
-  flex: 1 1 50%;
+  flex: 1 1 45%; /* 45% width for the left section */
   max-width: 600px;
 }
+
+.about-left h3 {
+  font-size: 0.8rem; /* Small size */
+  text-transform: uppercase; /* Capitalize letters */
+  letter-spacing: 1.5px; /* Space between letters */
+  color: #fff; /* White text */
+  font-weight: 600; /* Medium weight */
+  margin-bottom: 0.5rem;
+}
+
+.about-left h2 {
+  font-size: 2.5rem; /* Large size */
+  font-weight: 700; /* Bold */
+  line-height: 1.2; /* Adjust line spacing */
+  color: #fff; /* White text */
+  margin-bottom: 1rem;
+}
+
 .about-left p {
   font-size: 1rem;
   line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
-
 /* Download CV Button (rounded box) */
 .download-cv-btn {
   margin-top: 1.5rem;
@@ -203,18 +252,26 @@ body {
   background-color: #AFEEEE; /* Light turquoise color */
   color: black; /* Text becomes visible on turquoise background */
 }
-
-
-/* Right About (Skills) */
+/* Right Section: Skills */
 .about-right {
-  flex: 1 1 40%;
+  flex: 1 1 45%; /* 45% width for the right section */
+  max-width: 600px;
 }
+
+.about-right h3 {
+  font-size: 1.5rem; /* Heading size */
+  font-weight: 700; /* Bold */
+  margin-bottom: 1rem;
+  color: #fff; /* White text */
+}
+
 .skill {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
   gap: 1rem;
 }
+
 .skill-bar {
   background-color: #333;
   height: 10px;
@@ -222,44 +279,94 @@ body {
   border-radius: 5px;
   overflow: hidden;
 }
+
 .skill-fill {
-  background-color: #AFEEEE;
+  background-color: #AFEEEE; /* Light turquoise */
   height: 100%;
-  width: 0;
+  width: 0; /* Default width; animate later */
   transition: width 0.5s;
 }
+
 .skill-value {
   font-size: 0.9rem;
   min-width: 40px;
   text-align: right;
 }
 
+/* Responsive Design: Stack Columns */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column; /* Stack columns vertically */
+  }
+
+  .about-left, .about-right {
+    flex: 1 1 100%; /* Full width for both sections */
+  }
+}
+
+
+
+
+
+
+
 /* ========== PORTFOLIO SECTION ========== */
+/* Portfolio Section Styles */
 .portfolio-section {
-  padding: 6rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  scroll-margin-top: 80px;
+  padding: 4rem 2rem; /* Reduced padding for less vertical space */
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Space between elements */
 }
 
-/* Titles (light turquoise used) */
-.portfolio-title h3 {
-  font-size: 1rem;
-  margin-bottom: 0.2rem;
-}
-.portfolio-title h1 {
-  font-family: 'Poppins', Arial, sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem; /* closer spacing */
+/* Portfolio Header: Two Columns */
+.portfolio-header {
+  display: flex;
+  justify-content: space-between; /* Left and right alignment */
+  align-items: flex-start; /* Align content at the top */
+  gap: 2rem; /* Space between columns */
 }
 
-/* Minimal margin for subtitle */
-.portfolio-subtitle {
-  text-align: right;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  color: #ccc;
+/* Left Content: Center-Aligned Within Left Column */
+.portfolio-heading-left {
+  flex: 1; /* Left column width */
+  text-align: center; /* Center-align content inside the left column */
 }
+
+.portfolio-heading-left h3 {
+  font-size: 1rem; /* Small heading */
+  letter-spacing: 1.2px; /* Slight spacing */
+  text-transform: uppercase; /* Capital letters */
+  color: #fff; /* White text */
+  margin-bottom: 0.5rem; /* Space below */
+}
+
+.portfolio-heading-left h1 {
+  font-size: 3rem; /* Large heading */
+  font-weight: bold; /* Bold text */
+  margin-bottom: .1rem; /* Space below */
+  color: #fff; /* White text */
+}
+
+/* Right Content: Left-Aligned Within Right Column */
+.portfolio-subheading-right {
+  flex: 1; /* Right column width */
+  text-align: left; /* Align content to the left inside the right column */
+}
+
+.portfolio-subheading-right p {
+  font-size: 1.2rem;
+  color: #b0b0b0; /* Light gray for subheading */
+  margin-bottom: 0;
+}
+
+.portfolio-section {
+  padding: 6rem 2rem; /* Increase the first value (6rem) for more vertical space */
+}
+
+
 
 /* Tabs (centered) */
 .tabs-container {
@@ -281,10 +388,13 @@ body {
   transition: background 0.3s;
 }
 .tab-button:hover {
-  background: #444;
+  background-color: #AFEEEE; /* Light turquoise background */
+  color: black; /* Text becomes visible on turquoise background */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
+
 .tab-button.active {
-  background: #ccc;
+  background: #AFEEEE;
   color: #000;
 }
 
@@ -374,33 +484,51 @@ body {
 }
 
 /* ========== OUTPUT / PLATFORMS SECTION ========== */
-.output-section {
-  padding: 6rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  scroll-margin-top: 80px;
-  text-align: left;
+.output-platform {
+  padding: 6rem 2rem; /* Add spacing around the section */
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
 }
 
-.output-title h3 {
-  font-size: 1rem;
-  color: #AFEEEE;
-  margin-bottom: 0.2rem;
-}
-.output-title h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  color: #AFEEEE;
-  margin-bottom: 2rem;
+.output-container {
+  display: flex; /* Flexbox layout for two columns */
+  justify-content: space-between; /* Space between columns */
+  gap: 2rem; /* Space between left and right columns */
+  align-items: center; /* Center-align content vertically */
 }
 
-/* Right-aligned description */
-.output-description {
-  text-align: right;
-  margin-bottom: 2rem;
-  color: #ccc;
-  font-size: 1rem;
+/* Left Column: Heading */
+.output-left {
+  flex: 1; /* Occupy 1/3 of the space */
+  text-align: center; /* Center align the heading inside the column */
 }
+
+.output-left h3 {
+  font-size: 1rem; /* Small size for "Output" */
+  color: #fff; /* White text */
+  text-transform: uppercase; /* Capitalize text */
+  margin-bottom: 0.5rem; /* Add spacing below */
+}
+
+.output-left h1 {
+  font-size: 3rem; /* Large size for "Platforms" */
+  font-weight: bold; /* Bold text */
+  color: #fff; /* White text */
+  margin: 0; /* Remove extra margin */
+}
+
+/* Right Column: Content */
+.output-right {
+  flex: 2; /* Occupy 2/3 of the space */
+  text-align: left; /* Left align content inside the column */
+}
+
+.output-right p {
+  font-size: 1.2rem; /* Slightly larger font size for readability */
+  line-height: 1.6; /* Adjust line height for better spacing */
+  color: #b0b0b0; /* Light gray text */
+}
+
 
 /* Carousel Container */
 .output-carousel {
@@ -441,6 +569,7 @@ body {
   flex: 0 0 calc(33% - 1rem);
   width: 300px;
   min-width: 250px;
+  height: 50vh;
   background: #fff;
   color: #000;
   border-radius: 8px;
@@ -465,6 +594,14 @@ body {
   height: 40px;
   object-fit: contain;
 }
+.content-box p {
+  line-height: 2 !important;
+  margin-top: 10px;
+}
+.content-box {
+  padding: 20px;
+}
+
 .platform-box h2 {
   font-size: 1.2rem;
   margin-bottom: 0.3rem;
@@ -474,33 +611,48 @@ body {
 }
 
 /* ========== ACHIEVEMENTS SECTION ========== */
+/* ========== ACHIEVEMENTS SECTION ========== */
+/* Achievements Section */
 .achievements-section {
-  padding: 6rem 2rem;
-  scroll-margin-top: 80px;
+  padding: 4rem 2rem;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
 }
-.achievements-section h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #AFEEEE;
+
+.achievements-heading {
+  font-family: 'Playfair Display', serif; /* Playfair Display font */
+  font-size: 3rem; /* Large font size */
+  font-weight: bold; /* Bold */
+  text-align: left; /* Left-aligned */
+  margin-bottom: 2rem; /* Space below heading */
 }
-.achievements-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: start; /* left align images */
+
+/* Grid for Certification Images */
+.certifications-grid, .images-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 2rem; /* Space between grid items */
+  margin-bottom: 4rem; /* Space below grid */
 }
-.achievements-grid img {
-  width: 250px;
+
+/* Individual Certification Box */
+.cert-box img, .image-box img {
+  width: 100%; /* Make images responsive */
   height: auto;
-  border: 2px solid #fff;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: transform 0.3s;
+  border-radius: 8px; /* Rounded corners */
+  transition: transform 0.3s, box-shadow 0.3s; /* Hover effect transitions */
 }
-.achievements-grid img:hover {
-  transform: scale(1.05);
+
+.cert-box img:hover, .image-box img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2); /* Add shadow */
 }
+
+/* Certification Box Links */
+.cert-box {
+  text-decoration: none; /* Remove underline from links */
+}
+
 
 /* ========== RESPONSIVE ADJUSTMENTS ========== */
 @media (max-width: 768px) {
